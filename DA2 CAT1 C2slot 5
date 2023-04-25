@@ -1,0 +1,119 @@
+#include <stdio.h>
+#include <string.h>
+
+int modifyString(char str[]) {
+    int len = strlen(str);
+    int i;
+
+    
+    for(i = 0; i < len; i++) {
+        if(str[i] == ' ') {
+            break;
+        }
+        if(i == 0) {
+            str[i] = toupper(str[i]);
+        } else {
+            str[i] = tolower(str[i]);
+        }
+    }
+
+    
+    for(i = i+1; i < len; i++) {
+        str[i] = toupper(str[i]);
+    }
+
+    
+    printf("%s\n", str);
+
+    
+    int length = strlen(str);
+    printf("%d\n", length);
+
+    
+    if(length < 20) {
+        return length;
+    } else {
+        return sizeof(str);
+    }
+}
+
+int main() {
+    char input[100];
+
+   
+    printf("Enter a sentence with two words: ");
+    fgets(input, 100, stdin);
+
+   
+    int result = modifyString(input);
+
+   
+    printf("The returned value is %d\n", result);
+
+    return 0;
+}
+#include <stdio.h>
+#include <string.h>
+
+int modifyString(char str[]) {
+    int len = strlen(str);
+    int i;
+
+    for(i = 0; i < len; i++) {
+        if(str[i] == ' ') {
+            break;
+        }
+        if(i == 0) {
+            str[i] = toupper(str[i]);
+        } else {
+            str[i] = tolower(str[i]);
+        }
+    }
+
+   
+    for(i = i+1; i < len; i++) {
+        str[i] = toupper(str[i]);
+    }
+
+    
+    printf("%s\n", str);
+
+    int length = strlen(str);
+    printf("%d\n", length);
+
+    
+    if(length < 20) {
+        return length;
+    } else {
+        return sizeof(str);
+    }
+}
+
+int main() {
+    char input[100];
+
+    
+    printf("Enter a sentence with two words: ");
+    fgets(input, 100, stdin);
+
+    
+    int result = modifyString(input);
+
+    
+    printf("The returned value is %d\n", result);
+
+    return 0;
+}
+//Computer PROGRAMMING
+//21
+//The returned value is 100
+
+/*In general terms, the length of a string refers to the number of characters it contains,
+while the size of a string refers to the amount of memory allocated to store the string.
+The length of a string can be determined using a string function that counts the number of characters in the string, 
+while the size of a string can be determined using the sizeof() operator.
+
+The return value of a function that operates on a string can depend on various factors, 
+such as the specific implementation of the function and the input provided to the function. 
+In the context of the provided question, the function returns the length of the string if it is less than 20 characters, 
+and returns the size of the string otherwise.*/
